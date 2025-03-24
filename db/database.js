@@ -1,8 +1,14 @@
-const sequelize = require("sequelize");
+const mongoose = require("mongoose");
 
-const connection = new sequelize("teste1", "root", "adm1234", {
-    host: 'localhost',
-    dialect: 'mysql'
+const uri = "mongodb+srv://ka9ddcgamer:murylo123@cluster0.vs7rrut.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("Conectado ao MongoDB Atlas!");
+}).catch((err) => {
+    console.error("Erro ao conectar ao MongoDB:", err);
 });
 
-module.exports = connection;
+module.exports = mongoose;

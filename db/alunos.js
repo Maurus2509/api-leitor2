@@ -1,15 +1,17 @@
-const sequelize = require("sequelize");
-const connection = require("./database");
+const mongoose = require("./database");
 
-const alunos = connection.define("alunos", {
+const alunoSchema = new mongoose.Schema({
     nome: {
-        type: sequelize.STRING
+        type: String,
+        required: true
     },
     email: {
-        type: sequelize.STRING
+        type: String,
+        required: true,
+        unique: true
     }
 });
 
-alunos.sync({ force: false }).then(() => { });
+const Aluno = mongoose.model("Aluno", alunoSchema);
 
-module.exports = alunos;
+module.exports = Aluno;
