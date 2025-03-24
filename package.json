@@ -16,6 +16,8 @@
     "fs": "^0.0.1-security",
     "html5-qrcode": "^2.3.8",
     "https": "^1.0.0",
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.12.2",
     "mysql2": "^3.14.0",
     "sequelize": "^6.37.6"
   }
